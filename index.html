@@ -18,28 +18,21 @@ button{cursor:pointer}button.p{background:var(--ac);color:#fff;border-color:var(
 .row{display:flex;gap:8px;align-items:center;margin:8px 0;color:var(--mu);font-size:14px}.row button{width:auto;padding:6px 12px;font-size:14px}
 .card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin:10px 0}
 .card.t{border:2px solid var(--ac)}
+.card.off-card{background:#f0fdf4;border-color:#bbf7d0}
 .h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.d{font-weight:700;font-size:18px}.mu{color:var(--mu);font-size:14px}
 .s{font-size:26px;font-weight:800;margin:4px 0;color:var(--ac3)}.off{color:var(--mu);font-weight:600;font-size:22px}
 .ch{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.ch span{background:var(--ac2);color:var(--ac3);border-radius:999px;padding:4px 12px;font-size:15px;font-weight:500}
-.ch span.m{background:#fef3c7;color:#92400e}.ch span.p{background:#d1fae5;color:#065f46}
-.sg{display:inline-block;border-radius:10px;padding:2px 10px;margin-right:6px}
-.sg.m{background:#fef3c7;color:#92400e}.sg.p{background:#d1fae5;color:#065f46}
-.lg{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--mu);margin:6px 2px 10px}
-.lg i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
-.lg .m{background:#fcd34d}.lg .p{background:#34d399}
-.n{color:var(--wa);font-size:14px;margin-top:6px}.rq{color:var(--ok);font-size:15px;margin-top:6px;font-weight:600}
+.n{color:var(--wa);font-size:14px;margin-top:6px}
 .f{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.f .w{grid-column:1/3}
 .sm{width:auto;padding:7px 12px;font-size:14px;margin-top:8px;margin-right:6px}
 </style></head><body><main>
 <h1>Turni</h1>
 <div class="bar"><select id="pp" aria-label="Persona"></select><select id="ww" aria-label="Settimana"></select></div>
 <div class="stat"><span class="l">Ore settimanali</span><span><span class="big" id="hrs">0</span><span class="u">h</span></span></div>
-<div class="lg"><span><i class="m"></i>Mattina</span><span><i class="p"></i>Pomeriggio</span></div>
 <div class="row"><span id="me"></span><button id="bm"></button></div>
 <div id="out"></div>
-<div id="rl"></div>
 <p class="mu" style="text-align:center;margin-top:20px" id="src"></p>
-<p class="mu" style="text-align:center">Pagina aggiornata il 09/11/2026 15:00</p>
+<p class="mu" style="text-align:center">Pagina aggiornata il 09/11/2026 15:14</p>
 </main>
 <script>
 const D={"people":["Silvia R.","Paola C.","Jessica L.","Marco B.","Laura R.","Francesca G.","Mariglena L.","Eralda S.","Ilaria S.","Matilde P.","Elenia F.","Leonardo D.","Sabina A.","Sibilla L.","Lucrezia M.","Andra C."],"weeks":[{"start":"2026-11-02","days":[{"date":"2026-11-02","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[480,840],[900,1080]],"Jessica L.":[[840,1200]],"Marco B.":[[480,840]],"Laura R.":[[900,1260]],"Francesca G.":[[900,1260]],"Mariglena L.":[[480,840]],"Eralda S.":[[900,1260]],"Ilaria S.":[[840,1200]],"Matilde P.":[[480,840]],"Elenia F.":[[840,1200]],"Leonardo D.":[[540,780],[840,1140]],"Sabina A.":[[480,780],[840,1080]],"Sibilla L.":[[540,780],[840,1140]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-11-03","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[480,840]],"Jessica L.":[[600,840],[900,1200]],"Marco B.":[[840,1200]],"Laura R.":[[540,840]],"Francesca G.":[[480,840]],"Mariglena L.":[[900,1260]],"Eralda S.":[[540,900]],"Ilaria S.":[[900,1260]],"Matilde P.":[[840,1200]],"Elenia F.":[[480,780],[840,1080]],"Andra C.":[[540,780]],"Leonardo D.":[[480,840]],"Sabina A.":[[840,1200]],"Sibilla L.":[[840,1200]],"Lucrezia M.":[[480,780]]}},{"date":"2026-11-04","note":[],"shifts":{"Silvia R.":[[540,780],[840,1080]],"Paola C.":[[600,780],[840,1200]],"Jessica L.":[[840,1200]],"Marco B.":[[480,840]],"Laura R.":[[600,780],[840,1200]],"Francesca G.":[[840,1200]],"Mariglena L.":[[480,840]],"Eralda S.":[[600,780],[840,1200]],"Ilaria S.":[[480,840]],"Matilde P.":[[480,840]],"Elenia F.":[[480,840]],"Andra C.":[[540,780]],"Leonardo D.":[[900,1260]],"Sabina A.":[[900,1260]],"Sibilla L.":[[600,780],[840,1140]],"Lucrezia M.":[[480,780]]}},{"date":"2026-11-05","note":["corso Bionike 16,45"],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[900,1260]],"Jessica L.":[[480,840]],"Marco B.":[[600,780],[840,1200]],"Francesca G.":[[480,840]],"Mariglena L.":[[600,780],[840,1200]],"Eralda S.":[[480,840]],"Ilaria S.":[[840,1200]],"Matilde P.":[[900,1260]],"Andra C.":[[480,780]],"Leonardo D.":[[600,780],[840,1200]],"Sabina A.":[[600,780],[840,1200]],"Sibilla L.":[[540,900]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-11-06","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[480,840]],"Jessica L.":[[900,1260]],"Laura R.":[[480,840]],"Francesca G.":[[840,1200]],"Mariglena L.":[[840,1200]],"Eralda S.":[[840,1200]],"Ilaria S.":[[480,840]],"Matilde P.":[[600,780],[840,1200]],"Elenia F.":[[480,840]],"Andra C.":[[900,1260]],"Leonardo D.":[[480,840]],"Sabina A.":[[480,840]],"Sibilla L.":[[900,1140]],"Lucrezia M.":[[480,720]]}},{"date":"2026-11-07","note":[],"shifts":{"Silvia R.":[[540,780]],"Jessica L.":[[480,840]],"Marco B.":[[900,1260]],"Laura R.":[[840,1200]],"Francesca G.":[[600,780],[840,1140]],"Mariglena L.":[[480,840]],"Eralda S.":[[480,840]],"Ilaria S.":[[600,780],[840,1140]],"Matilde P.":[[480,840]],"Elenia F.":[[900,1260]],"Andra C.":[[840,1200]],"Lucrezia M.":[[480,720]]}},{"date":"2026-11-08","note":[],"shifts":{"Marco B.":[[510,810]],"Laura R.":[[510,810]],"Elenia F.":[[510,810]],"Andra C.":[[510,810]],"Sibilla L.":[[510,810]]}}],"src":"ORARIONOVDIC2026.xlsx","imp":"2026-11-09"},{"start":"2026-11-09","days":[{"date":"2026-11-09","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[900,1260]],"Jessica L.":[[600,780],[840,1200]],"Marco B.":[[840,1200]],"Laura R.":[[480,840]],"Francesca G.":[[900,1260]],"Mariglena L.":[[480,840]],"Eralda S.":[[600,840],[900,1200]],"Ilaria S.":[[480,840]],"Matilde P.":[[840,1140]],"Elenia F.":[[840,1200]],"Andra C.":[[540,780]],"Leonardo D.":[[480,840]],"Sabina A.":[[480,840]],"Sibilla L.":[[540,780],[840,1140]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-11-10","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[480,840]],"Jessica L.":[[840,1200]],"Marco B.":[[480,840]],"Laura R.":[[840,1200]],"Francesca G.":[[480,840]],"Mariglena L.":[[900,1260]],"Eralda S.":[[540,900]],"Ilaria S.":[[840,1200]],"Matilde P.":[[480,840]],"Elenia F.":[[840,1200]],"Andra C.":[[480,840]],"Leonardo D.":[[900,1260]],"Sabina A.":[[900,1260]],"Sibilla L.":[[840,1200]],"Lucrezia M.":[[480,780]]}},{"date":"2026-11-11","note":["corso Rilastil 8,30"],"shifts":{"Silvia R.":[[540,780],[840,1080]],"Paola C.":[[480,840]],"Jessica L.":[[900,1260]],"Marco B.":[[900,1260]],"Laura R.":[[480,840]],"Francesca G.":[[840,1200]],"Mariglena L.":[[480,840]],"Eralda S.":[[600,840],[900,1200]],"Ilaria S.":[[840,1200]],"Matilde P.":[[840,1200]],"Elenia F.":[[480,840]],"Andra C.":[[540,780]],"Leonardo D.":[[480,840]],"Sabina A.":[[840,1200]],"Sibilla L.":[[600,780],[840,1140]],"Lucrezia M.":[[480,780]]}},{"date":"2026-11-12","note":["inventario","corso avene ore 14,00"],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[840,1200]],"Jessica L.":[[600,780],[840,1200]],"Marco B.":[[480,840]],"Laura R.":[[600,780],[840,1200]],"Francesca G.":[[840,1200]],"Eralda S.":[[900,1260]],"Ilaria S.":[[480,840]],"Matilde P.":[[480,840]],"Elenia F.":[[900,1260]],"Andra C.":[[540,780]],"Sabina A.":[[480,840]],"Sibilla L.":[[840,1200]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-11-13","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[600,780],[840,1200]],"Jessica L.":[[480,840]],"Marco B.":[[840,1200]],"Laura R.":[[900,1260]],"Francesca G.":[[600,780],[840,1200]],"Mariglena L.":[[480,840]],"Eralda S.":[[480,840]],"Elenia F.":[[480,840]],"Andra C.":[[900,1260]],"Leonardo D.":[[840,1200]],"Sabina A.":[[600,780],[840,1200]],"Sibilla L.":[[540,780],[840,1140]],"Lucrezia M.":[[480,720]]}},{"date":"2026-11-14","note":[],"shifts":{"Paola C.":[[480,840]],"Marco B.":[[600,780],[840,1140]],"Laura R.":[[480,840]],"Francesca G.":[[480,840]],"Mariglena L.":[[840,1200]],"Ilaria S.":[[900,1260]],"Matilde P.":[[900,1260]],"Elenia F.":[[600,780],[840,1140]],"Andra C.":[[480,840]],"Leonardo D.":[[840,1200]],"Sabina A.":[[480,840]],"Lucrezia M.":[[480,720]]}},{"date":"2026-11-15","note":[],"shifts":{"Mariglena L.":[[510,810],[870,1170]],"Ilaria S.":[[510,750],[810,1170]],"Matilde P.":[[540,840],[900,1200]],"Leonardo D.":[[540,900],[960,1200]]}}],"src":"ORARIONOVDIC2026.xlsx","imp":"2026-11-09"},{"start":"2026-11-16","days":[{"date":"2026-11-16","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[900,1260]],"Jessica L.":[[480,840]],"Marco B.":[[600,840],[900,1200]],"Laura R.":[[480,840]],"Francesca G.":[[840,1200]],"Mariglena L.":[[480,840]],"Eralda S.":[[540,840]],"Ilaria S.":[[480,840]],"Matilde P.":[[840,1200]],"Elenia F.":[[840,1200]],"Andra C.":[[540,780]],"Leonardo D.":[[480,840]],"Sabina A.":[[900,1260]],"Sibilla L.":[[540,780],[840,1140]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-11-17","note":["corso preposto sede"],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[540,840]],"Jessica L.":[[840,1200]],"Marco B.":[[900,1260]],"Laura R.":[[480,840]],"Francesca G.":[[480,840]],"Mariglena L.":[[840,1200]],"Eralda S.":[[840,1200]],"Ilaria S.":[[900,1260]],"Matilde P.":[[600,780],[840,1140]],"Elenia F.":[[480,840]],"Andra C.":[[540,780]],"Leonardo D.":[[840,1200]],"Sabina A.":[[840,1200]],"Sibilla L.":[[840,1200]],"Lucrezia M.":[[480,780]]}},{"date":"2026-11-18","note":[],"shifts":{"Silvia R.":[[540,780],[840,1080]],"Paola C.":[[840,1200]],"Jessica L.":[[480,840]],"Marco B.":[[480,840]],"Laura R.":[[900,1260]],"Francesca G.":[[900,1260]],"Mariglena L.":[[480,840]],"Eralda S.":[[600,840],[900,1200]],"Ilaria S.":[[480,840]],"Matilde P.":[[840,1200]],"Elenia F.":[[600,780],[840,1200]],"Andra C.":[[540,780]],"Leonardo D.":[[480,780],[840,1080]],"Sibilla L.":[[600,780],[840,1140]],"Lucrezia M.":[[480,780]]}},{"date":"2026-11-19","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Jessica L.":[[840,1200]],"Marco B.":[[600,840],[900,1200]],"Laura R.":[[480,840]],"Francesca G.":[[480,840]],"Mariglena L.":[[900,1260]],"Ilaria S.":[[600,780],[840,1200]],"Matilde P.":[[480,840]],"Elenia F.":[[900,1260]],"Andra C.":[[540,780]],"Leonardo D.":[[840,1200]],"Sabina A.":[[840,1200]],"Sibilla L.":[[540,900]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-11-20","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[480,840]],"Marco B.":[[480,840]],"Laura R.":[[840,1200]],"Mariglena L.":[[600,780],[840,1200]],"Eralda S.":[[480,840]],"Ilaria S.":[[480,840]],"Matilde P.":[[900,1260]],"Elenia F.":[[840,1200]],"Andra C.":[[900,1260]],"Leonardo D.":[[840,1200]],"Sabina A.":[[480,840]],"Sibilla L.":[[840,1140]],"Lucrezia M.":[[480,720]]}},{"date":"2026-11-21","note":[],"shifts":{"Paola C.":[[840,1200]],"Jessica L.":[[900,1260]],"Laura R.":[[600,780],[840,1140]],"Francesca G.":[[840,1200]],"Mariglena L.":[[480,840]],"Eralda S.":[[900,1260]],"Matilde P.":[[480,840]],"Elenia F.":[[480,840]],"Andra C.":[[600,780],[840,1140]],"Leonardo D.":[[480,840]],"Sabina A.":[[840,1200]],"Sibilla L.":[[540,780]],"Lucrezia M.":[[480,720]]}},{"date":"2026-11-22","note":[],"shifts":{"Paola C.":[[510,750],[810,1170]],"Jessica L.":[[510,810],[870,1170]],"Francesca G.":[[540,900],[960,1200]],"Eralda S.":[[510,810]],"Sabina A.":[[540,840],[900,1200]]}}],"src":"ORARIONOVDIC2026.xlsx","imp":"2026-11-09"},{"start":"2026-11-23","days":[{"date":"2026-11-23","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[480,840]],"Jessica L.":[[900,1260]],"Marco B.":[[840,1200]],"Laura R.":[[840,1200]],"Francesca G.":[[900,1260]],"Mariglena L.":[[480,840]],"Eralda S.":[[840,1200]],"Ilaria S.":[[480,840]],"Matilde P.":[[600,780],[840,1200]],"Elenia F.":[[480,840]],"Leonardo D.":[[840,1200]],"Sabina A.":[[480,840]],"Sibilla L.":[[540,840]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-11-24","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[900,1260]],"Jessica L.":[[480,840]],"Marco B.":[[540,840]],"Laura R.":[[840,1200]],"Francesca G.":[[600,780],[840,1200]],"Mariglena L.":[[900,1260]],"Eralda S.":[[480,840]],"Ilaria S.":[[840,1200]],"Matilde P.":[[480,840],[900,1020]],"Elenia F.":[[840,1200]],"Andra C.":[[540,780]],"Leonardo D.":[[480,840]],"Sabina A.":[[840,1200]],"Sibilla L.":[[840,1200]],"Lucrezia M.":[[480,780]]}},{"date":"2026-11-25","note":[],"shifts":{"Silvia R.":[[540,780],[840,1080]],"Paola C.":[[480,840]],"Jessica L.":[[600,780],[840,1200]],"Marco B.":[[840,1200]],"Laura R.":[[480,840]],"Francesca G.":[[840,1200]],"Mariglena L.":[[480,780]],"Eralda S.":[[540,900]],"Ilaria S.":[[600,780],[840,1200]],"Matilde P.":[[900,1260]],"Elenia F.":[[900,1260]],"Leonardo D.":[[840,1200]],"Sabina A.":[[480,840]],"Sibilla L.":[[600,780],[840,1140]],"Lucrezia M.":[[480,780]]}},{"date":"2026-11-26","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[480,840],[900,1020]],"Jessica L.":[[480,840]],"Marco B.":[[480,840]],"Francesca G.":[[600,780],[840,1200]],"Mariglena L.":[[600,780],[840,1200]],"Eralda S.":[[840,1200]],"Ilaria S.":[[480,840]],"Matilde P.":[[840,1200]],"Andra C.":[[540,780]],"Leonardo D.":[[900,1260]],"Sabina A.":[[900,1260]],"Sibilla L.":[[540,900]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-11-27","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[840,1200]],"Jessica L.":[[840,1200]],"Laura R.":[[840,1200]],"Francesca G.":[[480,840]],"Mariglena L.":[[480,840]],"Eralda S.":[[900,1260]],"Ilaria S.":[[900,1260]],"Matilde P.":[[480,840]],"Elenia F.":[[480,780]],"Andra C.":[[900,1260]],"Leonardo D.":[[840,1200]],"Sabina A.":[[540,840]],"Sibilla L.":[[600,780],[840,1140]],"Lucrezia M.":[[480,720]]}},{"date":"2026-11-28","note":[],"shifts":{"Silvia R.":[[540,780]],"Paola C.":[[480,840]],"Jessica L.":[[480,840]],"Marco B.":[[900,1260]],"Laura R.":[[900,1260]],"Mariglena L.":[[840,1200]],"Eralda S.":[[600,780],[840,1140]],"Ilaria S.":[[480,840]],"Elenia F.":[[840,1200]],"Andra C.":[[840,1200]],"Leonardo D.":[[480,840]],"Sabina A.":[[600,840],[900,1140]],"Lucrezia M.":[[480,720]]}},{"date":"2026-11-29","note":[],"shifts":{"Marco B.":[[540,900],[960,1200]],"Laura R.":[[540,840],[900,1200]],"Elenia F.":[[510,750],[810,1170]],"Andra C.":[[510,810],[870,1170]],"Sibilla L.":[[510,810]]}}],"src":"ORARIONOVDIC2026.xlsx","imp":"2026-11-09"},{"start":"2026-11-30","days":[{"date":"2026-11-30","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[900,1260]],"Jessica L.":[[900,1260]],"Marco B.":[[480,840]],"Laura R.":[[840,1200]],"Francesca G.":[[540,840]],"Mariglena L.":[[480,780]],"Eralda S.":[[840,1200]],"Ilaria S.":[[840,1200]],"Matilde P.":[[840,1200]],"Elenia F.":[[480,840],[900,1020]],"Andra C.":[[540,780]],"Leonardo D.":[[840,1200]],"Sabina A.":[[480,840]],"Sibilla L.":[[540,780],[840,1140]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-12-01","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[480,840]],"Jessica L.":[[480,840]],"Marco B.":[[900,1260]],"Laura R.":[[600,780],[840,1200]],"Francesca G.":[[840,1200]],"Mariglena L.":[[840,1200]],"Eralda S.":[[540,840]],"Ilaria S.":[[480,840]],"Matilde P.":[[480,840]],"Elenia F.":[[840,1200]],"Andra C.":[[540,780]],"Leonardo D.":[[900,1260]],"Sabina A.":[[840,1200]],"Sibilla L.":[[840,1200]],"Lucrezia M.":[[480,780]]}},{"date":"2026-12-02","note":[],"shifts":{"Silvia R.":[[540,780],[840,1080]],"Paola C.":[[840,1200]],"Jessica L.":[[480,780]],"Marco B.":[[840,1200]],"Laura R.":[[900,1260]],"Francesca G.":[[480,840]],"Mariglena L.":[[480,840]],"Eralda S.":[[540,840]],"Ilaria S.":[[840,1200]],"Matilde P.":[[840,1200]],"Elenia F.":[[600,780],[840,1200]],"Andra C.":[[480,840]],"Leonardo D.":[[480,840]],"Sabina A.":[[900,1260]],"Sibilla L.":[[600,780],[840,1140]],"Lucrezia M.":[[480,780]]}},{"date":"2026-12-03","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[480,840]],"Jessica L.":[[840,1200]],"Marco B.":[[600,780],[840,1200]],"Laura R.":[[480,840]],"Francesca G.":[[900,1260]],"Mariglena L.":[[840,1200]],"Eralda S.":[[600,840],[900,1200]],"Ilaria S.":[[600,780],[840,1200]],"Elenia F.":[[900,1260]],"Andra C.":[[540,780]],"Sabina A.":[[480,840]],"Sibilla L.":[[540,900]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-12-04","note":[],"shifts":{"Silvia R.":[[540,780],[840,960]],"Paola C.":[[480,840]],"Marco B.":[[480,840]],"Laura R.":[[600,780],[840,1200]],"Francesca G.":[[840,1200]],"Eralda S.":[[900,1260]],"Matilde P.":[[480,840]],"Elenia F.":[[480,840]],"Andra C.":[[900,1260]],"Leonardo D.":[[840,1200]],"Sabina A.":[[840,1200]],"Sibilla L.":[[540,840],[900,1140]],"Lucrezia M.":[[480,720]]}},{"date":"2026-12-05","note":[],"shifts":{"Silvia R.":[[540,780]],"Paola C.":[[840,1200]],"Jessica L.":[[840,1200]],"Marco B.":[[480,840]],"Francesca G.":[[480,840]],"Mariglena L.":[[900,1260]],"Eralda S.":[[480,840]],"Ilaria S.":[[900,1260]],"Matilde P.":[[900,1260]],"Andra C.":[[480,840]],"Leonardo D.":[[840,1200]],"Sabina A.":[[480,840]],"Lucrezia M.":[[480,720]]}},{"date":"2026-12-06","note":[],"shifts":{"Jessica L.":[[510,750],[810,1170]],"Mariglena L.":[[540,840],[900,1200]],"Ilaria S.":[[510,810]],"Matilde P.":[[540,900],[960,1200]],"Leonardo D.":[[510,810],[870,1170]]}}],"src":"ORARIONOVDIC2026.xlsx","imp":"2026-11-09"},{"start":"2026-12-07","days":[{"date":"2026-12-07","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Paola C.":[[840,1200]],"Jessica L.":[[480,840]],"Marco B.":[[900,1200]],"Laura R.":[[840,1200]],"Francesca G.":[[900,1260]],"Mariglena L.":[[600,780],[840,1200]],"Eralda S.":[[480,840]],"Ilaria S.":[[840,1200]],"Matilde P.":[[480,840]],"Elenia F.":[[480,840]],"Andra C.":[[480,840]],"Leonardo D.":[[900,1260]],"Sabina A.":[[840,1200]],"Sibilla L.":[[540,780],[840,1140]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-12-08","note":[],"shifts":{"Silvia R.":[[480,780]],"Paola C.":[[900,1260]],"Jessica L.":[[900,1200]],"Marco B.":[[840,1200]],"Laura R.":[[900,1200]],"Francesca G.":[[480,840]],"Mariglena L.":[[840,1200]],"Eralda S.":[[540,780]],"Ilaria S.":[[840,1200]],"Matilde P.":[[540,840]],"Elenia F.":[[840,1200]],"Andra C.":[[480,840]],"Leonardo D.":[[480,780]],"Sabina A.":[[480,840]],"Sibilla L.":[[840,1200]],"Lucrezia M.":[[480,780]]}},{"date":"2026-12-09","note":[],"shifts":{"Silvia R.":[[540,780],[840,1080]],"Paola C.":[[480,840]],"Jessica L.":[[480,840]],"Marco B.":[[600,780],[840,1200]],"Laura R.":[[480,840]],"Francesca G.":[[840,1200]],"Mariglena L.":[[480,840]],"Eralda S.":[[900,1260]],"Matilde P.":[[840,1200]],"Elenia F.":[[900,1260]],"Andra C.":[[480,840]],"Leonardo D.":[[840,1200]],"Sabina A.":[[480,840]],"Sibilla L.":[[600,780],[840,1140]],"Lucrezia M.":[[480,780]]}},{"date":"2026-12-10","note":[],"shifts":{"Silvia R.":[[480,780],[840,1020]],"Jessica L.":[[900,1260]],"Marco B.":[[480,840]],"Laura R.":[[600,780],[840,1200]],"Francesca G.":[[480,840]],"Mariglena L.":[[840,1200]],"Ilaria S.":[[840,1200]],"Matilde P.":[[900,1260]],"Elenia F.":[[480,840]],"Andra C.":[[480,840]],"Leonardo D.":[[480,840]],"Sabina A.":[[840,1200]],"Sibilla L.":[[540,900]],"Lucrezia M.":[[480,780],[840,1140]]}},{"date":"2026-12-11","note":[],"shifts":{"Silvia R.":[[540,780],[840,1020]],"Paola C.":[[480,840]],"Jessica L.":[[840,1200]],"Marco B.":[[900,1260]],"Laura R.":[[840,1200]],"Mariglena L.":[[480,840]],"Eralda S.":[[600,780],[840,1200]],"Ilaria S.":[[900,1260]],"Matilde P.":[[480,840]],"Elenia F.":[[600,780],[840,1200]],"Andra C.":[[900,1260]],"Leonardo D.":[[840,1200]],"Sibilla L.":[[840,1140]],"Lucrezia M.":[[480,720]]}},{"date":"2026-12-12","note":[],"shifts":{"Paola C.":[[900,1260]],"Jessica L.":[[480,840]],"Marco B.":[[480,840]],"Laura R.":[[480,840]],"Francesca G.":[[840,1200]],"Eralda S.":[[840,1200]],"Ilaria S.":[[840,1200]],"Matilde P.":[[600,780],[840,1140]],"Elenia F.":[[480,840]],"Leonardo D.":[[600,780],[840,1140]],"Sabina A.":[[900,1260]],"Sibilla L.":[[540,780]],"Lucrezia M.":[[480,720]]}},{"date":"2026-12-13","note":[],"shifts":{"Paola C.":[[540,900],[960,1200]],"Francesca G.":[[510,810],[870,1170]],"Eralda S.":[[540,840],[900,1200]],"Ilaria S.":[[510,750],[810,1170]],"Sabina A.":[[510,810],[870,1170]]}}],"src":"ORARIONOVDIC2026.xlsx","imp":"2026-11-09"}]},DEF='Elenia';
@@ -49,15 +42,13 @@ const GN=['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sa
 const MN=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
 const f=m=>{const h=m/60|0,x=m%60;return x?h+':'+String(x).padStart(2,'0'):''+h};
 const fs=a=>a.map(s=>f(s[0])+'–'+f(s[1])).join(' · ');
-const fa=s=>s[0]<840?'m':'p';
-const sgs=a=>a.map(s=>`<span class="sg ${fa(s)}">${f(s[0])}–${f(s[1])}</span>`).join('');
 const hrs=a=>a.reduce((t,s)=>t+s[1]-s[0],0);
 const dd=s=>new Date(s+'T00:00');
 const lab=d=>{const x=dd(d);return GN[x.getDay()]+' '+x.getDate()+' '+MN[x.getMonth()]};
 const itd=s=>s.split('-').reverse().join('/');
 const today=new Date().toISOString().slice(0,10);
-let person=S.get('p'),me=S.get('me'),wi=0,req=[];
-try{req=JSON.parse(S.get('req')||'[]')}catch(e){}
+let person=S.get('p'),me=S.get('me'),wi=0,overrides={};
+try{overrides=JSON.parse(S.get('overrides')||'{}')}catch(e){}
 if(!D.people.includes(person))person=D.people.find(p=>p.startsWith(DEF))||D.people[0];
 {const t=dd(today);let k=D.weeks.findIndex(w=>t>=dd(w.start)&&t<new Date(+dd(w.start)+7*864e5));wi=k<0?(t<dd(D.weeks[0].start)?0:D.weeks.length-1):k}
 $('#pp').innerHTML=D.people.map(p=>`<option>${p}</option>`).join('');
@@ -70,37 +61,104 @@ $('#pp').onchange=e=>{person=e.target.value;S.set('p',person);draw()};
 $('#ww').onchange=e=>{wi=+e.target.value;draw()};
 $('#bm').onclick=()=>{me=me===person?'':person;S.set('me',me);draw()};
 const ov=(a,b)=>{const r=[];a.forEach(x=>b.forEach(y=>{const s=Math.max(x[0],y[0]),e=Math.min(x[1],y[1]);if(e>s)r.push([s,e])}));return r};
+
+function getShifts(wStart, date, p){
+  if(overrides[wStart] && overrides[wStart][date] && overrides[wStart][date][p] !== undefined){
+    return overrides[wStart][date][p];
+  }
+  const dayObj = D.weeks.find(w=>w.start===wStart)?.days.find(d=>d.date===date);
+  return dayObj ? dayObj.shifts[p] : undefined;
+}
+
 function draw(){
   const w=D.weeks[wi],mine=person===me;let tot=0,h='';
   w.days.forEach((d,i)=>{
-    const sh=d.shifts[person],rq=req.filter(r=>r.p===person&&r.date===d.date);
+    const sh=getShifts(w.start, d.date, person);
     if(sh)tot+=hrs(sh);
     let c='';
-    if(sh){const L=Object.keys(d.shifts).filter(n=>n!==person).map(n=>({n,o:ov(sh,d.shifts[n])})).filter(x=>x.o.length).sort((a,b)=>a.o[0][0]-b.o[0][0]);
-      c=L.length?`<div class="mu" style="margin-top:8px">Con te in questa fascia (${L.length})</div><div class="ch">${L.flatMap(x=>x.o.map(s=>`<span class="${fa(s)}">${x.n} · ${f(s[0])}–${f(s[1])}</span>`)).join('')}</div>`:'<div class="mu" style="margin-top:8px">Nessun collega in sovrapposizione</div>'}
-    h+=`<div class="card${d.date===today?' t':''}"><div class="h"><span class="d">${lab(d.date)}</span><span class="mu">${d.date===today?'Oggi':''}</span></div>
-    <div class="s${sh?'':' off'}">${sh?sgs(sh):'Riposo'}</div>${c}
+    const currentDayShifts = {};
+    D.people.forEach(n=>{
+      const s = getShifts(w.start, d.date, n);
+      if(s) currentDayShifts[n] = s;
+    });
+
+    if(sh){
+      const L=Object.keys(currentDayShifts).filter(n=>n!==person).map(n=>({n,o:ov(sh,currentDayShifts[n])})).filter(x=>x.o.length).sort((a,b)=>a.o[0][0]-b.o[0][0]);
+      c=L.length?`<div class="mu" style="margin-top:8px">Con te in questa fascia (${L.length})</div><div class="ch">${L.map(x=>`<span>${x.n} · ${fs(x.o)}</span>`).join('')}</div>`:'<div class="mu" style="margin-top:8px">Nessun collega in sovrapposizione</div>';
+    }
+    const isOff = !sh || sh.length === 0;
+    h+=`<div class="card${d.date===today?' t':''}${isOff?' off-card':''}"><div class="h"><span class="d">${lab(d.date)}</span><span class="mu">${d.date===today?'Oggi':''}</span></div>
+    <div class="s${sh?'':' off'}">${sh?fs(sh):'Riposo'}</div>${c}
     ${d.note.map(n=>`<div class="n">Nota del giorno: ${n}</div>`).join('')}
-    ${rq.map(r=>`<div class="rq">Proposta di cambio: ${r.nt}${r.co?' (con '+r.co+')':''}</div>`).join('')}
-    ${mine?`<button class="sm" onclick="openF(${i})">⇄ Richiedi cambio turno</button><div id="f${i}"></div>`:''}</div>`});
+    ${mine?`<button class="sm" onclick="openF(${i})">⇄ Modifica / Scambia turno</button><div id="f${i}"></div>`:''}</div>`});
   $('#hrs').textContent=(tot/60).toLocaleString('it-IT',{maximumFractionDigits:1});
   $('#out').innerHTML=h;
   $('#src').textContent=w.src?`Fonte: ${w.src} · importato il ${itd(w.imp)}`:'';
-  $('#me').textContent=mine?'Modalità personale attiva: puoi proporre cambi turno':'Imposta il nome come “me” per proporre cambi';
+  $('#me').textContent=mine?'Modalità personale attiva: puoi modificare e scambiare i turni':'Imposta il nome come “me” per gestire i turni';
   $('#bm').textContent=mine?'Non sono io':'Sono io';
-  const mr=req.filter(r=>r.p===me);
-  $('#rl').innerHTML=mine&&mr.length?`<h1 style="margin-top:20px">Le mie richieste</h1>`+mr.map(r=>`<div class="card"><div class="d">${lab(r.date)}</div><div class="mu">Da ${r.old} a <b>${r.nt}</b>${r.co?' · con '+r.co:''}</div>
-  <button class="sm p" style="width:auto" onclick="send('${r.id}')">Invia</button><button class="sm" style="width:auto" onclick="del('${r.id}')">Elimina</button></div>`).join(''):''}
-function openF(i){const d=D.weeks[wi].days[i],el=$('#f'+i);if(el.innerHTML){el.innerHTML='';return}
+}
+
+function openF(i){
+  const w=D.weeks[wi], d=w.days[i], el=$('#f'+i);
+  if(el.innerHTML){el.innerHTML='';return}
+  const sh=getShifts(w.start, d.date, person);
+  const myIsMorning = sh && sh.length > 0 && sh[0][0] < 840;
+
+  const currentDayShifts = {};
+  D.people.forEach(n=>{
+    const s = getShifts(w.start, d.date, n);
+    if(s) currentDayShifts[n] = s;
+  });
+
+  const colleagues = Object.keys(currentDayShifts).filter(n=>{
+    if(n===person) return false;
+    const cSh = currentDayShifts[n];
+    if(!cSh || cSh.length===0) return false;
+    const cIsMorning = cSh[0][0] < 840;
+    if(sh && sh.length > 0){
+      return cIsMorning !== myIsMorning;
+    }
+    return true;
+  });
+
   el.innerHTML=`<div class="f"><label class="mu">Nuovo inizio<input type="time" id="a${i}"></label><label class="mu">Nuova fine<input type="time" id="b${i}"></label>
-  <label class="mu w">Scambio con (facoltativo)<select id="c${i}"><option value="">—</option>${Object.keys(d.shifts).filter(n=>n!==person).map(n=>`<option>${n}</option>`).join('')}</select></label>
-  <button class="p w" onclick="addR(${i})">Salva proposta</button></div>`}
-function addR(i){const d=D.weeks[wi].days[i],a=$('#a'+i).value,b=$('#b'+i).value;if(!a||!b){alert('Inserisci inizio e fine del nuovo orario.');return}
-  const r={id:'r'+Date.now(),p:person,date:d.date,old:d.shifts[person]?fs(d.shifts[person]):'riposo',nt:a.replace(/^0/,'')+'–'+b.replace(/^0/,''),co:$('#c'+i).value};
-  req.push(r);S.set('req',JSON.stringify(req));draw();send(r.id)}
-function del(id){req=req.filter(r=>r.id!==id);S.set('req',JSON.stringify(req));draw()}
-async function send(id){const r=req.find(x=>x.id===id);if(!r)return;
-  const t=`Richiesta cambio turno – ${r.p}, ${lab(r.date)}: da ${r.old} a ${r.nt}${r.co?' (scambio con '+r.co+')':''}.`;
-  try{if(navigator.share){await navigator.share({text:t})}else{await navigator.clipboard.writeText(t);alert('Testo copiato negli appunti.')}}catch(e){}}
+  <label class="mu w">Scambio con collega (turno opposto)<select id="c${i}"><option value="">— Nessuno (solo modifica) —</option>${colleagues.map(n=>`<option value="${n}">${n} (${fs(currentDayShifts[n])})</option>`).join('')}</select></label>
+  <button class="p w" onclick="saveChange(${i})">Applica modifica immediata</button></div>`;
+}
+
+function saveChange(i){
+  const w=D.weeks[wi], d=w.days[i];
+  const a=$('#a'+i).value, b=$('#b'+i).value;
+  const co=$('#c'+i).value;
+  
+  if(!a && !b && !co){
+    alert('Inserisci un nuovo orario o seleziona un collega per lo scambio.');
+    return;
+  }
+
+  if(!overrides[w.start]) overrides[w.start] = {};
+  if(!overrides[w.start][d.date]) overrides[w.start][d.date] = {};
+
+  const myCurrentSh = getShifts(w.start, d.date, person) || [];
+  
+  let newMySh = myCurrentSh;
+  if(a && b){
+    const minsA = parseInt(a.split(':')[0])*60 + parseInt(a.split(':')[1]);
+    const minsB = parseInt(b.split(':')[0])*60 + parseInt(b.split(':')[1]);
+    newMySh = [[minsA, minsB]];
+  }
+
+  if(co){
+    const coCurrentSh = getShifts(w.start, d.date, co) || [];
+    overrides[w.start][d.date][person] = coCurrentSh;
+    overrides[w.start][d.date][co] = (a && b) ? newMySh : myCurrentSh;
+  } else if(a && b) {
+    overrides[w.start][d.date][person] = newMySh;
+  }
+
+  S.set('overrides', JSON.stringify(overrides));
+  draw();
+}
+
 draw();
 </script></body></html>
